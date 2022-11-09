@@ -75,8 +75,12 @@ export function Wakeup() {
         background: '#2f3774'
       }}
     >
+      {/* pagina pra calcular a hora de acordar */}
       <div>
-        <h2>Wake Up!</h2>
+        <h2>Hora de Acordar!</h2>
+        {hourTime && (
+          <p>Esses são os melhores horários para acordar se você dormir ás {hourTime}</p>
+        )}
       </div>
 
       <div
