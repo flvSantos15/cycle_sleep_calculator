@@ -74,25 +74,26 @@ export function Sleep() {
 
   return (
     <div className="flex items-center justify-center h-full bg-blue-dark">
-      <div className="flex flex-col items-center justify-between bg-blue-dark w-[100%] max-w-[90rem] h-full max-h[50rem] my-[7.5rem] py-[2rem] px-[10rem] lg:px-[6rem] gap-8">
-        {/* pagina pra calcular a hora de ir dormir */}
-        <div className="">
-          <h2 className="font-['Baloo_2'] text-center font-bold text-[2.5rem] leading-[2.625rem] text-white">
+      <div className="flex flex-col items-center justify-center bg-blue-dark w-[100%] max-w-[90rem] h-full px-[1rem] xl:px-[10rem] lg:px-[6rem] md:px-[2rem]">
+        <div>
+          <h2 className="font-['Baloo_2'] text-center font-bold text-[1.75rem] xl:text-[2.5rem] leading-[2.625rem] text-white">
             Hora de Dormir!
           </h2>
         </div>
 
-        {time && (
-          <p className="font-['Roboto'] text-center font-light text-[0.875rem] text-white">
-            Esses são os melhores horários para dormir se você quiser acordar ás {hourTime}h
-          </p>
-        )}
+        <div className="flex mt-6">
+          {time && (
+            <p className="font-['Roboto'] text-center font-light text-[0.875rem] text-white">
+              Esses são os melhores horários para dormir se você quiser acordar ás {hourTime}h
+            </p>
+          )}
+        </div>
 
-        <div className="flex flex-col justify-between items-center w-[30rem] h-[19rem] gap-4 py-[1rem]">
+        <div className="flex flex-col items-center w-full xl:w-[30rem] h-[24rem] mt-2">
           {!time ? (
             <>
               <div className="flex flex-col justify-between h-[14rem]">
-                <h3 className="font-['Roboto'] font-light text-[1.75rem] leading-[2.625rem] text-white">
+                <h3 className="font-['Roboto'] font-light xl:text-[1.75rem] text-[1.25rem] leading-[2.625rem] text-white">
                   Que horas você precisar acordar?
                 </h3>
                 <div className="flex flex-col w-[10rem] h-[8rem] items-center justify-between mx-auto">
@@ -107,7 +108,7 @@ export function Sleep() {
                 </div>
               </div>
               <button
-                className="bg-purple-light text-base-title px-[1.125rem] py-[0.75rem] rounded text-[1.25rem] font-semibold shadow-lg"
+                className="bg-blue-light text-white px-[1.125rem] py-[0.75rem] rounded text-[1.25rem] font-semibold shadow-lg"
                 onClick={handleCalculateCycle}
               >
                 calcular
@@ -115,7 +116,7 @@ export function Sleep() {
             </>
           ) : (
             <>
-              <div className="grid grid-cols-2 w-[70%] h-[10.5rem] bg-purple">
+              <div className="flex flex-col items-center w-[70%] h-[17rem]">
                 {sixthCycle && (
                   <p className="font-['Roboto'] text-[2.75rem] font-bold text-[#77de7f]">
                     {sixthCycle}h
@@ -138,7 +139,7 @@ export function Sleep() {
                 )}
               </div>
               <button
-                className="bg-purple-light text-base-title px-[1.125rem] py-[0.75rem] rounded text-[1.25rem] font-semibold shadow-lg"
+                className="bg-blue-light text-white px-[1.125rem] py-[0.75rem] rounded text-[1.25rem] font-semibold shadow-lg"
                 onClick={handleResetCycle}
               >
                 voltar

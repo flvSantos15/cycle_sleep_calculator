@@ -9,8 +9,8 @@ export function Router() {
   return (
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/sleep" element={<Sleep />} />
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<Sleep />} />
         <Route path="/wakeup" element={<Wakeup />} />
       </Route>
     </Routes>

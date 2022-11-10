@@ -30,6 +30,11 @@ export function Wakeup() {
     }
   }
 
+  const handleResetCycle = () => {
+    setTimeString('')
+    setTime('')
+  }
+
   const getHourAndMinute = (date: Date) => {
     const formatted = `${String(new Date(date).getHours()).padStart(2, '0')}: ${String(new Date(date).getMinutes()).padStart(2, '0')}`
 
@@ -62,58 +67,80 @@ export function Wakeup() {
   }, [time])
 
   return (
-    <div
-      style={{
-        width: '100%',
-        height: '100vh',
-        margin: 0,
-        padding: 0,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        background: '#2f3774'
-      }}
-    >
-      {/* pagina pra calcular a hora de acordar */}
-      <div>
-        <h2>Hora de Acordar!</h2>
-        {hourTime && (
-          <p>Esses são os melhores horários para acordar se você dormir ás {hourTime}</p>
-        )}
-      </div>
+    <div className="flex items-center justify-center h-full bg-blue-light">
+      <div className="flex flex-col items-center justify-center bg-blue-light w-[100%] max-w-[90rem] h-full px-[1rem] xl:px-[10rem] lg:px-[6rem] md:px-[2rem]">
+        <div>
+          <h2 className="font-['Baloo_2'] text-center font-bold text-[1.75rem] xl:text-[2.5rem] leading-[2.625rem] text-blue-dark">
+            Hora de Acordar!
+          </h2>
+        </div>
 
-      <div
-        style={{
-          width: '20%',
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          gap: '4',
-        }}
-      >
-        <input
-          type="time"
-          name="hour"
-          id="hour"
-          value={hourTime}
-          onChange={(e) => setHourTime(e.target.value)}
-        />
-        <button onClick={handleCalculateCycle}>
-          calcular
-        </button>
-      </div>
+        <div className="flex mt-6">
+          {time && (
+            <p className="font-['Roboto'] text-center font-light text-[0.875rem] text-blue-dark">
+              Esses são os melhores horários para acordar se você dormir ás {hourTime}h
+            </p>
+          )}
+        </div>
 
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column'
-        }}
-      >
-        {sixthCycle && (<p>{sixthCycle}</p>)}
-        {fifthCycle && (<p>{fifthCycle}</p>)}
-        {fourthCycle && (<p>{fourthCycle}</p>)}
-        {thirdCycle && (<p>{thirdCycle}</p>)}
+        <div className="flex flex-col items-center w-full xl:w-[30rem] h-[24rem] mt-2">
+          {!time ? (
+            <>
+              <div className="flex flex-col justify-between h-[14rem]">
+                <h3 className="font-['Roboto'] font-light xl:text-[1.75rem] text-[1.25rem] leading-[2.625rem] text-yellow-light">
+                  Que horas você vai dormir?
+                </h3>
+                <div className="flex flex-col w-[10rem] h-[8rem] items-center justify-between mx-auto">
+                  <input
+                    type="time"
+                    name="hour"
+                    id="hour"
+                    value={hourTime}
+                    onChange={(e) => setHourTime(e.target.value)}
+                    className="bg-blue-light border border-solid border-['#f1e9c9'] rounded w-[6rem] h-[3rem] px-[0.5rem] text-[#fff]"
+                  />
+                </div>
+              </div>
+              <button
+                className="bg-blue-dark text-white px-[1.125rem] py-[0.75rem] rounded text-[1.25rem] font-semibold shadow-lg"
+                onClick={handleCalculateCycle}
+              >
+                calcular
+              </button>
+            </>
+          ) : (
+            <>
+              <div className="flex flex-col items-center w-[70%] h-[17rem]">
+                {sixthCycle && (
+                  <p className="font-['Roboto'] text-[2.75rem] font-bold text-[#77de7f]">
+                    {sixthCycle}h
+                  </p>
+                )}
+                {fifthCycle && (
+                  <p className="font-['Roboto'] text-[2.75rem] font-bold text-[#b8d879]">
+                    {fifthCycle}h
+                  </p>
+                )}
+                {fourthCycle && (
+                  <p className="font-['Roboto'] text-[2.75rem] font-bold text-[#dbbd79]">
+                    {fourthCycle}h
+                  </p>
+                )}
+                {thirdCycle && (
+                  <p className="font-['Roboto'] text-[2.75rem] font-bold text-[#db7979]">
+                    {thirdCycle}h
+                  </p>
+                )}
+              </div>
+              <button
+                className="bg-blue-dark text-white px-[1.125rem] py-[0.75rem] rounded text-[1.25rem] font-semibold shadow-lg mt-5"
+                onClick={handleResetCycle}
+              >
+                voltar
+              </button>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );

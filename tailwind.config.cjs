@@ -10,6 +10,7 @@ module.exports = {
       'yellow': '#dbac2c',
       'yellow-light': '#f1e9c9',
       'blue-dark': '#2d3047',
+      'blue-light': '#7b86d8',
       'purple-dark': '#4b2995',
       'purple': '#8047f8',
       'purple-light': '#ebe5f9',
