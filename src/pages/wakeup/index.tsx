@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 export function Wakeup() {
   const [time, setTime] = useState('')
@@ -13,15 +13,16 @@ export function Wakeup() {
   const handleCalculateCycle = () => {
     const hourNumber = Number(hourTime.replace(':', ''))
 
-    const hourInNumber = Number(`${new Date().getHours()}${new Date().getMinutes()}`)
+    const hourInNumber = Number(
+      `${new Date().getHours()}${new Date().getMinutes()}`
+    )
 
-    const month = new Date().toLocaleString('default', { month: 'long' });
+    const month = new Date().toLocaleString('en-GB', { month: 'long' })
     const year = new Date().getFullYear()
-    let day: number;
+    let day: number
 
     if (hourNumber > hourInNumber) {
       day = new Date().getDate()
-
     } else {
       day = new Date().getDate() + 1
     }
@@ -36,7 +37,10 @@ export function Wakeup() {
   }
 
   const getHourAndMinute = (date: Date) => {
-    const formatted = `${String(new Date(date).getHours()).padStart(2, '0')}: ${String(new Date(date).getMinutes()).padStart(2, '0')}`
+    const formatted = `${String(new Date(date).getHours()).padStart(
+      2,
+      '0'
+    )}: ${String(new Date(date).getMinutes()).padStart(2, '0')}`
 
     return formatted
   }
@@ -54,10 +58,18 @@ export function Wakeup() {
       const distance = timeOffline - now
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
 
-      const sixCycleDistance = new Date((((minutes - minutes) + (90 * 5)) * 60000 + timeOffline))
-      const fiveCycleDistance = new Date((((minutes - minutes) + (90 * 4)) * 60000 + timeOffline))
-      const fourCycleDistance = new Date((((minutes - minutes) + (90 * 3)) * 60000 + timeOffline))
-      const threeCycleDistance = new Date((((minutes - minutes) + (90 * 2)) * 60000 + timeOffline))
+      const sixCycleDistance = new Date(
+        (minutes - minutes + 90 * 5) * 60000 + timeOffline
+      )
+      const fiveCycleDistance = new Date(
+        (minutes - minutes + 90 * 4) * 60000 + timeOffline
+      )
+      const fourCycleDistance = new Date(
+        (minutes - minutes + 90 * 3) * 60000 + timeOffline
+      )
+      const threeCycleDistance = new Date(
+        (minutes - minutes + 90 * 2) * 60000 + timeOffline
+      )
 
       setSixthCycle(getHourAndMinute(sixCycleDistance))
       setFifthCycle(getHourAndMinute(fiveCycleDistance))
@@ -78,7 +90,8 @@ export function Wakeup() {
         <div className="flex mt-6">
           {time && (
             <p className="font-['Roboto'] text-center font-light text-[0.875rem] text-blue-dark">
-              Esses são os melhores horários para acordar se você dormir ás {hourTime}h
+              Esses são os melhores horários para acordar se você dormir ás{' '}
+              {hourTime}h
             </p>
           )}
         </div>
@@ -143,5 +156,5 @@ export function Wakeup() {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 export function Sleep() {
   const [time, setTime] = useState('')
@@ -13,15 +13,17 @@ export function Sleep() {
   const handleCalculateCycle = () => {
     const hourNumber = Number(hourTime.replace(':', ''))
 
-    const hourInNumber = Number(`${new Date().getHours()}${new Date().getMinutes()}`)
+    const hourInNumber = Number(
+      `${new Date().getHours()}${new Date().getMinutes()}`
+    )
 
-    const month = new Date().toLocaleString('default', { month: 'long' });
+    const month = new Date().toLocaleString('en-GB', { month: 'long' })
     const year = new Date().getFullYear()
-    let day: number;
+    let day: number
 
-    if (hourNumber > hourInNumber) {
+    // if (hourNumber > hourInNumber) {
+    if (hourNumber < hourInNumber) {
       day = new Date().getDate()
-
     } else {
       day = new Date().getDate() + 1
     }
@@ -36,7 +38,10 @@ export function Sleep() {
   }
 
   const getHourAndMinute = (date: number) => {
-    const formatted = `${String(new Date(date).getHours()).padStart(2, '0')}: ${String(new Date(date).getMinutes()).padStart(2, '0')}`
+    const formatted = `${String(new Date(date).getHours()).padStart(
+      2,
+      '0'
+    )}: ${String(new Date(date).getMinutes()).padStart(2, '0')}`
 
     return formatted
   }
@@ -52,17 +57,17 @@ export function Sleep() {
       const timeOffline = new Date(time).getTime()
       const now = new Date().getTime()
       const distance = timeOffline - now
-      const cycle = (distance / 60000) / 90
+      const cycle = distance / 60000 / 90
 
       const sixCycleDistance = cycle - 6
       const fiveCycleDistance = cycle - 5
       const fourCycleDistance = cycle - 4
       const threeCycleDistance = cycle - 3
 
-      const dataSix = (sixCycleDistance * 90) * 60000
-      const dataFive = (fiveCycleDistance * 90) * 60000
-      const dataFour = (fourCycleDistance * 90) * 60000
-      const dataThree = (threeCycleDistance * 90) * 60000
+      const dataSix = sixCycleDistance * 90 * 60000
+      const dataFive = fiveCycleDistance * 90 * 60000
+      const dataFour = fourCycleDistance * 90 * 60000
+      const dataThree = threeCycleDistance * 90 * 60000
 
       setSixthCycle(getHourAndMinute(dataSix + now))
       setFifthCycle(getHourAndMinute(dataFive + now))
@@ -83,7 +88,8 @@ export function Sleep() {
         <div className="flex mt-6">
           {time && (
             <p className="font-['Roboto'] text-center font-light text-[0.875rem] text-white">
-              Esses são os melhores horários para dormir se você quiser acordar ás {hourTime}h
+              Esses são os melhores horários para dormir se você quiser acordar
+              ás {hourTime}h
             </p>
           )}
         </div>
@@ -148,5 +154,5 @@ export function Sleep() {
         </div>
       </div>
     </div>
-  );
+  )
 }
