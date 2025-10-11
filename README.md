@@ -6,7 +6,7 @@
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React.js, TypeScript, TailwindCSS, React-Testing-Library, Vitest.
+- **Frontend**: React.js, TypeScript, TailwindCSS, React-Testing-Library, Vitest, CI/CD.
 
 ## 👤 About Me
 

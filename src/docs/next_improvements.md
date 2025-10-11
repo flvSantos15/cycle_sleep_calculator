@@ -1,14 +1,14 @@
-- [] Add architecture pattern.
-- [] Add a design pattern.
-- [] Add unit test.
+- [X] Add CI/CD.
 - [] Add e2e test.
-- [] Add animations (framer or another one).
-- [] Add storybook.
-- [] Add documentation.
+- [] Add unit test.
 - [] Add acessibility.
 - [] Add internalization.
 - [] Add responsiviness.
-- [X] Add CI/CD.
 - [] Add logging.
+- [] Add architecture pattern.
+- [] Add a design pattern.
+- [] Add animations (framer or another one).
+- [] Add storybook.
+- [] Add documentation.
 - [] Deploy in another cloud service (AWS, Cloudflare, GCP)
 - [] Add CEO.
