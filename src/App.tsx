@@ -1,13 +1,16 @@
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 
 import { Router } from './Router';
+import { TimesProvider } from './context/time.context';
 
-import './styles/main.css'
+import './styles/main.css';
 
 export function App() {
   return (
     <BrowserRouter>
-      <Router />
+      <TimesProvider>
+        <Router />
+      </TimesProvider>
     </BrowserRouter>
   )
 }

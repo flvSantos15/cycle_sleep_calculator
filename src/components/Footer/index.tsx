@@ -1,5 +1,7 @@
 import { Heart } from 'phosphor-react'
 
+// Adicionar o linkedin
+
 export function Footer() {
   return (
     <div className="flex items-center justify-center bg-blue-light ">
