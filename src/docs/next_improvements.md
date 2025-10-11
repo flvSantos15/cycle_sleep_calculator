@@ -1,11 +1,11 @@
 - [X] Add CI/CD.
+- [X] Add architecture pattern.
 - [] Add e2e test.
 - [] Add unit test.
 - [] Add acessibility.
 - [] Add internalization.
 - [] Add responsiviness.
 - [] Add logging.
-- [] Add architecture pattern.
 - [] Add a design pattern.
 - [] Add animations (framer or another one).
 - [] Add storybook.

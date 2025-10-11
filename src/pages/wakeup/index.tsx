@@ -1,7 +1,7 @@
-import { CustomButton } from '../../components/CustomButton'
-import { CustomInput } from '../../components/CustomInput'
-import { PageTitle } from '../../components/PageTitle'
-import { SubTitle } from '../../components/SubTitle'
+import { CustomButton } from '../../components/atoms/CustomButton'
+import { CustomInput } from '../../components/atoms/CustomInput'
+import { PageTitle } from '../../components/atoms/PageTitle'
+import { SubTitle } from '../../components/atoms/SubTitle'
 import { useTimer } from '../../hooks/useTimer'
 
 export function Wakeup() {
