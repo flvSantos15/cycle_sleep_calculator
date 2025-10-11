@@ -8,7 +8,7 @@
 - [] Add acessibility.
 - [] Add internalization.
 - [] Add responsiviness.
-- [] Add CI/CD.
+- [X] Add CI/CD.
 - [] Add logging.
 - [] Deploy in another cloud service (AWS, Cloudflare, GCP)
 - [] Add CEO.
