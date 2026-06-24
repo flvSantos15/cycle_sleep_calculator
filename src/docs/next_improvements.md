@@ -1,14 +1,11 @@
 - [X] Add CI/CD.
 - [X] Add architecture pattern.
-- [] Add e2e test.
-- [] Add unit test.
+- [] Add e2e test (playwriting + vitest).
+- [] Add unit test (react testing library + vitest).
 - [] Add acessibility.
 - [] Add internalization.
 - [] Add responsiviness.
-- [] Add logging.
-- [] Add a design pattern.
 - [] Add animations (framer or another one).
 - [] Add storybook.
 - [] Add documentation.
-- [] Deploy in another cloud service (AWS, Cloudflare, GCP)
 - [] Add CEO.

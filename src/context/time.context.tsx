@@ -19,7 +19,7 @@ interface ITimerContextData {
 
 export const TimerContext = createContext({} as ITimerContextData)
 
-export function TimesProvider({ children }: ITimerProviderProps) {
+export function TimerProvider({ children }: ITimerProviderProps) {
   const [time, setTime] = useState('')
   const [hourTime, setHourTime] = useState('')
   const [timeString, setTimeString] = useState('')
@@ -29,6 +29,7 @@ export function TimesProvider({ children }: ITimerProviderProps) {
   const [thirdCycle, setThirdCycle] = useState('')
 
   const getHourTime = (time: string) => {
+    console.log(time)
     setHourTime(time)
   }
 
@@ -51,6 +52,7 @@ export function TimesProvider({ children }: ITimerProviderProps) {
     }
     if (hourTime.length) {
       setTimeString(`${month} ${day}, ${year} ${hourTime}:00`)
+      console.log('aqui')
     }
   }
 
@@ -95,6 +97,7 @@ export function TimesProvider({ children }: ITimerProviderProps) {
       setFifthCycle(getHourAndMinute(dataFive + now))
       setFourthCycle(getHourAndMinute(dataFour + now))
       setThirdCycle(getHourAndMinute(dataThree + now))
+      console.log(sixthCycle)
     }
   }, [time])
 
